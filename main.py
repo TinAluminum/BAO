@@ -15,7 +15,7 @@ def main():
                 run = False
 
         screen.fill(const.background_color)
-
+        # This is the update on collision
 
         pygame.display.update()
 
