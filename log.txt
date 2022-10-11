@@ -2,3 +2,7 @@ log 1: 9 Oct 2022
     - Github is a pain in the ass to use I swear
     UPDATE: Github now works
     NEXT: Start on making a rough draft of what the game should look like
+
+Log 2: 10 Oct 2022
+    - Start n finish basic pygame screen
+    NEXT: Plan on how many pixel is one length unit
