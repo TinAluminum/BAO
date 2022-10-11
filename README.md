@@ -1,2 +1,2 @@
 #Intro
-Not quite sure what I'm gonna do yet. Ma current plan is to learn about physic engine, object collision, and pixel art. Well c how it go 
+This branch is a test for collision. Goal is to make two blocks that can bounce off each other. 

@@ -1,5 +1,5 @@
 import pygame
 
 
-background_color = (200, 200, 200)
-screen_size = (1000, 600)
+background_color = (30, 30, 30)
+screen_size = (800, 800)
