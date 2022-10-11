@@ -5,4 +5,6 @@ log 1: 9 Oct 2022
 
 Log 2: 10 Oct 2022
     - Start n finish basic pygame screen
+    UPDATE: Finished Collision test program in Collision test brach
     NEXT: Plan on how many pixel is one length unit
+
