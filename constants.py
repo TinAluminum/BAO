@@ -6,6 +6,5 @@ screen_size = (1000, 600)
 
 
 # Entities
-
-bot = pygame.image.load(os.path.join('resources', 'test_entity.png'))
+bot = pygame.transform.scale(pygame.image.load(os.path.join('resources', 'test_entity.png')), (50, 50))
 doge = pygame.transform.scale(pygame.image.load(os.path.join('resources', 'dodge.png')), (60, 60))
