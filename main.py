@@ -6,7 +6,7 @@ def draw_entities(simulation, screen):
         screen.blit(entity.pg_pic, (entity.x, entity.y))
 
 def entities_creation(sim):
-    player = simu.Entity(10, (50, 50), (500, 0), const.bot, False)
+    player = simu.Entity(10, (54, 54), (500, 0), const.bot, False)
     big_guy = simu.Entity(10, (60, 60), (600, 0), const.doge, False)
     sim.add(player)
     sim.add(big_guy)
