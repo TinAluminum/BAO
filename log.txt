@@ -27,3 +27,5 @@ Log 3: 13 Oct 2022
     UPDATE: Got gravity to work now. Not sure if having only 10x10 pixels
         is enough to make a well defined character. Maybe should just make the
         character like 2meters tall
+    UPDATE: Simplifying the function even more. Now the entities creation and step
+        update is in two functions
