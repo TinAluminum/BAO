@@ -8,3 +8,22 @@ Log 2: 10 Oct 2022
     UPDATE: Finished Collision test program in Collision test brach
     NEXT: Plan on how many pixel is one length unit
 
+Log 3: 13 Oct 2022
+    - Finish physic engine demo with pymunk
+    - Entities should be in class which contains
+        - whether the thing is static or dynamic
+        - dimension of the entity
+            - Must b able to change
+        - 10 pixel = 1m
+        init value:
+            - mass
+            - current position
+            - current velocity
+    Class for gravity n shit
+        - So prob have to add different entities into the class
+        - Must contain all the physic rules and update every entities
+            it has
+        - Can use function space.step(time_step) for update the sim
+    UPDATE: Got gravity to work now. Not sure if having only 10x10 pixels
+        is enough to make a well defined character. Maybe should just make the
+        character like 2meters tall
