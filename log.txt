@@ -37,3 +37,7 @@ Log 4: 14 Oct 2022
     UPDATE: Fix the entity so that the x y coordinate is only contained in the pygame
         rect class, instead of having 2 different x y values for the pygame obj and
         the gravity calculation.
+    - Worked on collision but rn the ghost still fall through the platform. The current
+        fucntion check if the ghost and the plstform collides. If true, I set the ghost
+        static value to True so the ghost will stay still. Rn it works cus I only have 1
+        platform, but I gotta find way for it to work with multiple platforms and entities.

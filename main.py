@@ -6,13 +6,14 @@ def draw_entities(simulation, screen):
         screen.blit(entity.pg_pic, (entity.pg_obj.x, entity.pg_obj.y))
 
 def entities_creation(sim):
-    main_platform = simu.Entity(100, (900, 30), (50, 550), const.main_platform, True)
+    main_platform = simu.Entity(100, (900, 30), (50, 400), const.main_platform, True)
     player = simu.Entity(10, (54, 54), (500, 0), const.bot, False)
     big_guy = simu.Entity(10, (60, 60), (600, 0), const.doge, False)
 
     sim.add(main_platform)
     sim.add(player)
-    sim.add(big_guy)
+
+
 
 def main():
     screen = pygame.display.set_mode(const.screen_size)

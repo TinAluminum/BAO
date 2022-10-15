@@ -3,7 +3,7 @@ import pygame, os
 
 class Simulation():
     def __init__(self):
-        self.gravity = 500
+        self.gravity = 100
         self.shed = []
         self.dt = 1/60
 
@@ -19,8 +19,21 @@ class Simulation():
         for entity in self.shed:
             if entity.static is False:
                 self.update_entity(entity)
+                self.check_collision()
 
-
+    def check_collision(self):
+        collision_tolerance = 20
+        master = self.shed[1]
+        assert isinstance(master, Entity)
+        platform = self.shed[0]
+        if master.pg_obj.colliderect(platform.pg_obj):
+            print('COLLIDE')
+            print(abs(platform.pg_obj.top - master.pg_obj.bottom))
+            print(master.vy)
+            if abs(platform.pg_obj.top - master.pg_obj.bottom) < collision_tolerance:
+                print('HOLD')
+                master.static = True # Work for noe but need changes
+                master.pg_obj.y = platform.pg_obj.y-54
 
 
 
