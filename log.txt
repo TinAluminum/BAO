@@ -29,3 +29,8 @@ Log 3: 13 Oct 2022
         character like 2meters tall
     UPDATE: Simplifying the function even more. Now the entities creation and step
         update is in two functions
+
+Log 4: 14 Oct 2022
+    - Starting on putting a test platform on map
+    UPDATE: Got the platform to appear without falling. The object with Static = True
+        will now stay in place.

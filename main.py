@@ -8,6 +8,8 @@ def draw_entities(simulation, screen):
 def entities_creation(sim):
     player = simu.Entity(10, (54, 54), (500, 0), const.bot, False)
     big_guy = simu.Entity(10, (60, 60), (600, 0), const.doge, False)
+    main_platform = simu.Entity(100, (900, 30), (50, 550), const.main_platform, True)
+    sim.add(main_platform)
     sim.add(player)
     sim.add(big_guy)
 

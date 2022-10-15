@@ -17,7 +17,8 @@ class Simulation():
 
     def step(self):
         for entity in self.shed:
-            self.update_entity(entity)
+            if entity.static is False:
+                self.update_entity(entity)
 
 
 
