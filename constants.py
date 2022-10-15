@@ -9,3 +9,6 @@ screen_size = (1000, 600)
 bot = pygame.transform.scale(pygame.image.load(os.path.join('resources', 'Ghost.png')), (54, 54))
 doge = pygame.transform.scale(pygame.image.load(os.path.join('resources', 'dodge.png')), (60, 60))
 main_platform = pygame.transform.scale(pygame.image.load(os.path.join('resources', 'test_platform.png')), (900, 30))
+
+# Player velocity
+VEL = 5

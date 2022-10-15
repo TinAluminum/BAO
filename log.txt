@@ -41,3 +41,9 @@ Log 4: 14 Oct 2022
         fucntion check if the ghost and the plstform collides. If true, I set the ghost
         static value to True so the ghost will stay still. Rn it works cus I only have 1
         platform, but I gotta find way for it to work with multiple platforms and entities.
+    High Log: 2:32am
+        - Did simple character cntroll and now ghost can move.
+    NEXT: IDk m high
+    UPDATE: Seems like the colision rn have no problem with moving platformx
+    UPDATE: The thing is very good. Enf High log for now.
+

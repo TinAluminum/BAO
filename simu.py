@@ -3,7 +3,7 @@ import pygame, os
 
 class Simulation():
     def __init__(self):
-        self.gravity = 100
+        self.gravity = 1000
         self.shed = []
         self.dt = 1/60
 
@@ -13,7 +13,7 @@ class Simulation():
     def update_entity(self, entity):
         assert isinstance(entity, Entity) # need to change later
         entity.vy += self.gravity * self.dt
-        entity.pg_obj.y += entity.vy * self.dt
+        entity.pg.y += entity.vy * self.dt
 
     def step(self):
         for entity in self.shed:
@@ -26,14 +26,14 @@ class Simulation():
         master = self.shed[1]
         assert isinstance(master, Entity)
         platform = self.shed[0]
-        if master.pg_obj.colliderect(platform.pg_obj):
+        if master.pg.colliderect(platform.pg):
             print('COLLIDE')
-            print(abs(platform.pg_obj.top - master.pg_obj.bottom))
+            print(abs(platform.pg.top - master.pg.bottom))
             print(master.vy)
-            if abs(platform.pg_obj.top - master.pg_obj.bottom) < collision_tolerance:
+            if abs(platform.pg.top - master.pg.bottom) < collision_tolerance:
                 print('HOLD')
-                master.static = True # Work for noe but need changes
-                master.pg_obj.y = platform.pg_obj.y-54
+                master.pg.y = platform.pg.y-54
+                master.vy = 0
 
 
 
@@ -44,7 +44,7 @@ class Entity():
         self.vx = 0; self.vy = 0
         self.static = static
         self.pg_pic = image
-        self.pg_obj = pygame.Rect(ini_position[0], ini_position[1], dimension[0], dimension[1])
+        self.pg = pygame.Rect(ini_position[0], ini_position[1], dimension[0], dimension[1])
 
 
 
