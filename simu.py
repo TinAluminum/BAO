@@ -3,7 +3,7 @@ import pygame, os
 
 class Simulation():
     def __init__(self):
-        self.gravity = 100
+        self.gravity = 500
         self.shed = []
         self.dt = 1/60
 
@@ -13,7 +13,7 @@ class Simulation():
     def update_entity(self, entity):
         assert isinstance(entity, Entity) # need to change later
         entity.vy += self.gravity * self.dt
-        entity.y += entity.vy * self.dt
+        entity.pg_obj.y += entity.vy * self.dt
 
     def step(self):
         for entity in self.shed:
@@ -29,10 +29,10 @@ class Entity():
         self.mass = mass
         self.dimension = dimension # (WIDTH, HEIGHT)
         self.vx = 0; self.vy = 0
-        self.x = ini_position[0]
-        self.y = ini_position[1]
         self.static = static
         self.pg_pic = image
+        self.pg_obj = pygame.Rect(ini_position[0], ini_position[1], dimension[0], dimension[1])
+
 
 
 

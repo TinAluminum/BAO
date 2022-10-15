@@ -34,3 +34,6 @@ Log 4: 14 Oct 2022
     - Starting on putting a test platform on map
     UPDATE: Got the platform to appear without falling. The object with Static = True
         will now stay in place.
+    UPDATE: Fix the entity so that the x y coordinate is only contained in the pygame
+        rect class, instead of having 2 different x y values for the pygame obj and
+        the gravity calculation.
