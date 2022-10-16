@@ -29,7 +29,6 @@ class Simulation():
         for master in self.shed['Dynamic']:
             assert isinstance(master, Entity)
             for platform in self.shed['Static']:
-
                 if master.pg.colliderect(platform.pg):
                     print('COLLIDE')
                     print(abs(platform.pg.top - master.pg.bottom))
@@ -38,6 +37,7 @@ class Simulation():
                         print('HOLD')
                         master.pg.y = platform.pg.y-master.dimension[1]
                         master.vy = 0
+                        break
 
 
 
