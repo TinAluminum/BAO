@@ -23,7 +23,7 @@ class Simulation():
 
     def check_collision(self):
         collision_tolerance = 20
-        master = self.shed[1]
+        master = self.shed[-1]
         assert isinstance(master, Entity)
         platform = self.shed[0]
         if master.pg.colliderect(platform.pg):

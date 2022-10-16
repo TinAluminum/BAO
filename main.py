@@ -6,11 +6,12 @@ def draw_entities(simulation, screen):
         screen.blit(entity.pg_pic, (entity.pg.x, entity.pg.y))
 
 def entities_creation(sim):
-    main_platform = simu.Entity(100, (900, 30), (50, 300), const.main_platform, True)
     player = simu.Entity(10, (54, 54), (500, 0), const.bot, False)
-    big_guy = simu.Entity(10, (60, 60), (600, 0), const.doge, False)
+    main_platform = simu.Entity(100, (900, 30), (50, 300), const.main_platform, True)
+    small_platform = simu.Entity(10, (60, 60), (600, 50), const.small_platform, True)
 
     sim.add(main_platform)
+    sim.add(small_platform)
     sim.add(player)
 
 def handle_master_movement(master, keys_pressed):
@@ -42,7 +43,7 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
             if event.type == pygame.MOUSEBUTTONDOWN:
-                sim.shed[-1].pg.x, sim.shed[1].pg.y = event.pos[0], event.pos[1]
+                sim.shed[-1].pg.x, sim.shed[-1].pg.y = event.pos[0], event.pos[1]
                 sim.shed[-1].vy = 0
 
         keys_pressed = pygame.key.get_pressed()

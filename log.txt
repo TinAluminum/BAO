@@ -47,3 +47,6 @@ Log 4: 14 Oct 2022
     UPDATE: Seems like the colision rn have no problem with moving platformx
     UPDATE: The thing is very good. Enf High log for now.
 
+Log 5: 15 Oct 2022:
+    - Add a small platform
+    - Think for collision check I gotta make it loop over different static objects
