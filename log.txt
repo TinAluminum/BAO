@@ -50,3 +50,5 @@ Log 4: 14 Oct 2022
 Log 5: 15 Oct 2022:
     - Add a small platform
     - Think for collision check I gotta make it loop over different static objects
+    - Rn just make the player entity always the last one one list and the main
+        platform is the first index
