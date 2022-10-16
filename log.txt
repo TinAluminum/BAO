@@ -52,3 +52,7 @@ Log 5: 15 Oct 2022:
     - Think for collision check I gotta make it loop over different static objects
     - Rn just make the player entity always the last one one list and the main
         platform is the first index
+    UPDATE: Changed the shed attribute for Simulation so that it store entities based
+        on whether they are static or dynamic. The collision now works by looping through
+        dynamic entities and see if they collided with any static entities.
+    NEXT: Work on streamlining the player controll and fix the jump

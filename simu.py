@@ -4,11 +4,15 @@ import pygame, os
 class Simulation():
     def __init__(self):
         self.gravity = 1000
-        self.shed = []
+        self.shed = dict()
+        self.shed['Static'] = []; self.shed['Dynamic'] = []
         self.dt = 1/60
 
     def add(self, new_entity):
-        self.shed.append(new_entity)
+        if new_entity.static is True:
+            self.shed["Static"].append(new_entity)
+        else:
+            self.shed["Dynamic"].append(new_entity)
 
     def update_entity(self, entity):
         assert isinstance(entity, Entity) # need to change later
@@ -16,24 +20,24 @@ class Simulation():
         entity.pg.y += entity.vy * self.dt
 
     def step(self):
-        for entity in self.shed:
-            if entity.static is False:
-                self.update_entity(entity)
-                self.check_collision()
+        for entity in self.shed["Dynamic"]:
+            self.update_entity(entity)
+            self.check_collision()
 
     def check_collision(self):
         collision_tolerance = 20
-        master = self.shed[-1]
-        assert isinstance(master, Entity)
-        platform = self.shed[0]
-        if master.pg.colliderect(platform.pg):
-            print('COLLIDE')
-            print(abs(platform.pg.top - master.pg.bottom))
-            print(master.vy)
-            if abs(platform.pg.top - master.pg.bottom) < collision_tolerance:
-                print('HOLD')
-                master.pg.y = platform.pg.y-54
-                master.vy = 0
+        for master in self.shed['Dynamic']:
+            assert isinstance(master, Entity)
+            for platform in self.shed['Static']:
+
+                if master.pg.colliderect(platform.pg):
+                    print('COLLIDE')
+                    print(abs(platform.pg.top - master.pg.bottom))
+                    print(master.vy)
+                    if abs(platform.pg.top - master.pg.bottom) < collision_tolerance:
+                        print('HOLD')
+                        master.pg.y = platform.pg.y-master.dimension[1]
+                        master.vy = 0
 
 
 
