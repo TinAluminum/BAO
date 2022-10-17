@@ -8,19 +8,19 @@ def draw_entities(simulation, screen):
         screen.blit(entity.pg_pic, (entity.pg.x, entity.pg.y))
 
 def case_1(sim):
-    player = simu.Entity(10, (54, 54), (500, 0), const.bot, False)
-    main_platform = simu.Entity(100, (900, 30), (50, 500), const.main_platform, True)
-    small_platform = simu.Entity(10, (120, 60), (440, 200), const.small_platform, True)
-    small_platform2 = simu.Entity(10, (120, 60), (700, 350), const.small_platform, True)
-    small_platform3 = simu.Entity(10, (120, 60), (200, 350), const.small_platform, True)
-    doge = simu.Entity(10, (60, 60), (300, 0), const.doge, False)
+    player = simu.Entity(10, (66, 78), (500, 0), const.bot.convert_alpha(), False)
+    main_platform = simu.Entity(100, (900, 30), (50, 500), const.main_platform.convert_alpha(), True)
+    small_platform = simu.Entity(10, (120, 30), (440, 200), const.small_platform.convert_alpha(), True)
+    small_platform2 = simu.Entity(10, (120, 30), (700, 450), const.small_platform.convert_alpha(), True)
+    small_platform3 = simu.Entity(10, (120, 30), (200, 350), const.small_platform.convert_alpha(), True)
+    ghost = simu.Entity(10, (54, 54), (300, 0), const.ghost, False)
     sim.add(main_platform)
     sim.add(small_platform)
     sim.add(small_platform2)
     sim.add(small_platform3)
 
 
-    sim.add(doge)
+    sim.add(ghost)
     sim.add(player)
 
 def entities_creation(sim):
@@ -32,7 +32,7 @@ def handle_master_movement(master, keys_pressed):
     if keys_pressed[pygame.K_d]:  # RIGHT
         master.pg.x += const.VEL
     if keys_pressed[pygame.K_SPACE] or keys_pressed[pygame.K_w]:  # UP
-        master.pg.y -= 10
+        master.vy = -500
     if keys_pressed[pygame.K_s]:  # DOWN
         master.pg.y += const.VEL
 

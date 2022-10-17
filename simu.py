@@ -34,10 +34,20 @@ class Simulation():
                     print(abs(platform.pg.top - master.pg.bottom))
                     print(master.vy)
                     if abs(platform.pg.top - master.pg.bottom) < collision_tolerance:
-                        print('HOLD')
                         master.pg.y = platform.pg.y-master.dimension[1]
                         master.vy = 0
                         break
+                    if abs(platform.pg.bottom - master.pg.top) < collision_tolerance:
+                        master.pg.y = platform.pg.y + platform.dimension[1]
+                        master.vy = 0
+                        break
+                    if abs(platform.pg.left - master.pg.right) < collision_tolerance:
+                        master.pg.x = platform.pg.x-master.dimension[0]
+                        master.vx = 0
+                        break
+                    if abs(platform.pg.right - master.pg.left) < collision_tolerance:
+                        master.pg.x = platform.pg.x + platform.dimension[0]
+                        master.vx = 0
 
 
 

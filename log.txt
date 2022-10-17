@@ -56,3 +56,12 @@ Log 5: 15 Oct 2022:
         on whether they are static or dynamic. The collision now works by looping through
         dynamic entities and see if they collided with any static entities.
     NEXT: Work on streamlining the player controll and fix the jump
+
+Log 6: 16 Oct 2022
+    - The entity creation and the image load function required me to input dimension
+        two times, maybe can find a better way to recieve the dimension [ACTION REQUIRED]
+    UPDATE: Input fill collision into the game, still have a little bit of lag n bug but
+        should be fine
+    NEXT: Work on streamlining the player controll and fix the jump
+        - For jump, the bot must detect if it is on ground
+            - If it is, then it can jump by changing v velocity value
