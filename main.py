@@ -8,19 +8,25 @@ def draw_entities(simulation, screen):
         screen.blit(entity.pg_pic, (entity.pg.x, entity.pg.y))
 
 def case_1(sim):
-    player = simu.Entity(10, (66, 78), (500, 0), const.bot.convert_alpha(), False)
+    player = simu.Entity(10, (54, 54), (300, 0), const.ghost, False)
+
     main_platform = simu.Entity(100, (900, 30), (50, 500), const.main_platform.convert_alpha(), True)
-    small_platform = simu.Entity(10, (120, 30), (440, 200), const.small_platform.convert_alpha(), True)
-    small_platform2 = simu.Entity(10, (120, 30), (700, 450), const.small_platform.convert_alpha(), True)
-    small_platform3 = simu.Entity(10, (120, 30), (200, 350), const.small_platform.convert_alpha(), True)
-    ghost = simu.Entity(10, (54, 54), (300, 0), const.ghost, False)
+    # small_platform = simu.Entity(10, (120, 30), (440, 200), const.small_platform.convert_alpha(), True)
+    # small_platform2 = simu.Entity(10, (120, 30), (700, 450), const.small_platform.convert_alpha(), True)
+    # small_platform3 = simu.Entity(10, (120, 30), (200, 350), const.small_platform.convert_alpha(), True)
+    # robot = simu.Entity(10, (66, 78), (500, 0), const.bot.convert_alpha(), False)
     sim.add(main_platform)
-    sim.add(small_platform)
-    sim.add(small_platform2)
-    sim.add(small_platform3)
+    # sim.add(small_platform)
+    # sim.add(small_platform2)
+    # sim.add(small_platform3)
 
 
-    sim.add(ghost)
+
+
+
+
+
+    # sim.add(robot)
     sim.add(player)
 
 def entities_creation(sim):

@@ -65,3 +65,6 @@ Log 6: 16 Oct 2022
     NEXT: Work on streamlining the player controll and fix the jump
         - For jump, the bot must detect if it is on ground
             - If it is, then it can jump by changing v velocity value
+
+Log 7: 29 Oct 2022
+    - Will try to fix the jump so that the player can only jump if on the platform
